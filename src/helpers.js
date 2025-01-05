@@ -64,7 +64,7 @@ export const createExpense = ({ name, amount, budgetId }) => {
 export const calculateSpentByBudget = (budgetId) => {
   const expenses = fetchData("expenses") ?? [];
   const budgetSpent = expenses.reduce((acc, expense) => {
-    // check if expense.id === budgetId I passed in
+    // check if expense.id === budgetId passed in
     if (expense.budgetId !== budgetId) return acc;
 
     // add the current amount to my total
@@ -89,6 +89,6 @@ export const formatPercentage = (amt) => {
 export const formatCurrency = (amt) => {
   return amt.toLocaleString(undefined, {
     style: "currency",
-    currency: "USD",
+    currency: "INR",
   });
 };
